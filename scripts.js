@@ -29,32 +29,50 @@ function drawStars() {
         ctx.closePath();
     });
 }
-
-function animateStars(mouseX, mouseY) {
+function animateStars() {
     stars.forEach(star => {
-        const dx = star.x - mouseX;
-        const dy = star.y - mouseY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < 100) {
-            const angle = Math.atan2(dy, dx);
-            star.x += Math.cos(angle) * 2;
-            star.y += Math.sin(angle) * 2;
-        }
-        
+        star.x += (Math.random() - 0.5) * 2; // Random movement in x
+        star.y += (Math.random() - 0.5) * 2; // Random movement in y
+
         // Wrap around screen
         if (star.x > canvas.width) star.x = 0;
         if (star.x < 0) star.x = canvas.width;
         if (star.y > canvas.height) star.y = 0;
         if (star.y < 0) star.y = canvas.height;
-        
-        drawStars();
     });
+    drawStars(); // Update the canvas
 }
 
-canvas.addEventListener('mousemove', event => {
-    animateStars(event.clientX, event.clientY);
-});
+// Call animateStars periodically to create the animation effect
+setInterval(animateStars, 50); // Adjust delay for speed of stars
+
+// Remove the mousemove event listener
+canvas.removeEventListener('mousemove', animateStars);
+// function animateStars(mouseX, mouseY) {
+//     stars.forEach(star => {
+//         const dx = star.x - mouseX;
+//         const dy = star.y - mouseY;
+//         const distance = Math.sqrt(dx * dx + dy * dy);
+        
+//         if (distance < 100) {
+//             const angle = Math.atan2(dy, dx);
+//             star.x += Math.cos(angle) * 2;
+//             star.y += Math.sin(angle) * 2;
+//         }
+        
+//         // Wrap around screen
+//         if (star.x > canvas.width) star.x = 0;
+//         if (star.x < 0) star.x = canvas.width;
+//         if (star.y > canvas.height) star.y = 0;
+//         if (star.y < 0) star.y = canvas.height;
+        
+//         drawStars();
+//     });
+// }
+
+// canvas.addEventListener('mousemove', event => {
+//     animateStars(event.clientX, event.clientY);
+// });
 
 document.getElementById('theme-toggle').addEventListener('click', function() {
     document.body.classList.toggle('light-theme');

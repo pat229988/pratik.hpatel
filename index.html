@@ -7,38 +7,42 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-theme">
-    <aside>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><footer>
-                    <button id="theme-toggle">Toggle Theme</button>
-                    <p>Contact: pratik.hpatel@outlook.com | (647) 836-7371</p>
-                </footer></li>
-            </ul>
-        </nav>
-    </aside>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li>
+                        <label class="switch">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="switch-label">Toggle Theme</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
 
-    <main>
-        <header>
-            <h1>Pratik Harshadbhai Patel</h1>
-            <p>Software Developer & ML Engineer</p>
-            <p><a href="https://github.com/pat229988">GitHub</a> | <a href="https://www.linkedin.com/in/pratikhp/">LinkedIn</a></p>
-        </header>
+        <main>
+            <header>
+                <h1>Pratik Harshadbhai Patel</h1>
+                <p>Software Developer & ML Engineer</p>
+                <p><a href="https://github.com/pat229988">GitHub</a> | <a href="https://www.linkedin.com/in/pratikhp/">LinkedIn</a></p>
+            </header>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Graduate Certificate in AI & ML from Lambton College and Bachelor of Engineering in IT from Gujarat Technological University.</p>
-        </section>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Graduate Certificate in AI & ML from Lambton College and Bachelor of Engineering in IT from Gujarat Technological University.</p>
+            </section>
 
-        <!-- Add more sections here -->
+            <!-- Add more sections here -->
 
-        
-    </main>
-
+            
+        </main>
+    </div>
     <!-- Canvas for star animation -->
     <canvas id="stars"></canvas>
 
